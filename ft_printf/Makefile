@@ -6,13 +6,13 @@
 #    By: ddamiba <ddamiba@student.42lisboa.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 17:35:12 by ddamiba           #+#    #+#              #
-#    Updated: 2025/05/05 17:16:27 by ddamiba          ###   ########.fr        #
+#    Updated: 2025/06/09 14:19:53 by ddamiba          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 

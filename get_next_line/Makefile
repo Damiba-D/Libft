@@ -1,6 +1,6 @@
 # Compiler and flags
 CC      = cc
-CFLAGS  = -Wall -Wextra -Werror
+CFLAGS  = -g -Wall -Wextra -Werror
 
 # Files
 NAME    = get_next_line.a

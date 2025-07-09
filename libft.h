@@ -6,7 +6,7 @@
 /*   By: ddamiba <ddamiba@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 15:09:08 by ddamiba           #+#    #+#             */
-/*   Updated: 2025/04/26 17:46:10 by ddamiba          ###   ########.fr       */
+/*   Updated: 2025/06/20 18:12:42 by ddamiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	ft_putendl_fd(char *s, int fd);
 
 // Conversion
 int		ft_atoi(const char *str);
+long	ft_atol(const char *str);
 char	*ft_itoa(int n);
 void	ft_putnbr_fd(int n, int fd);
 

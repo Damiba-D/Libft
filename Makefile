@@ -6,7 +6,7 @@
 #    By: ddamiba <ddamiba@student.42lisboa.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 17:35:12 by ddamiba           #+#    #+#              #
-#    Updated: 2025/05/30 16:27:03 by ddamiba          ###   ########.fr        #
+#    Updated: 2025/06/20 18:20:34 by ddamiba          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRC = \
 	ft_putendl_fd.c ft_putnbr_fd.c ft_putnbr_base.c \
 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 	ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+	
 
 OBJ = $(SRC:.c=.o)
 HEADER = libft.h
@@ -45,7 +46,55 @@ $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
 %.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@ $(LFLAGS)
+
+# Build GNL and printf submodules
+submodules:
+	@$(MAKE) -C $(GNL_DIR)
+	@$(MAKE) -C $(PRINTF_DIR)
+
+# Cleaning rules
+clean:
+	$(RM) $(OBJ)
+	@$(MAKE) -C $(GNL_DIR) clean
+	@$(MAKE) -C $(PRINTF_DIR) clean
+
+fclean: clean
+	$(RM) $(NAME)
+	@$(MAKE) -C $(GNL_DIR) fclean
+	@$(MAKE) -C $(PRINTF_DIR) fclean
+
+re: fclean all
+
+.PHONY: all clean fclean re submodules
+
+# Library Name
+NAME = libft.a
+
+# Compiler & Tools
+CC = cc
+CFLAGS = -g -Wall -Wextra -Werror
+AR = ar rcs
+RM = rm -f
+
+# Submodules
+GNL_DIR = get_next_line
+PRINTF_DIR = ft_printf
+
+# Source Files
+SRC = ${wildcard *.c}
+	
+OBJ = $(SRC:.c=.o)
+HEADER = libft.h
+
+# Default rule
+all: submodules $(NAME)
+
+$(NAME): $(OBJ)
+	$(AR) $(NAME) $(OBJ)
+
+%.o: %.c $(HEADER)
+	$(CC) $(CFLAGS) -c $< -o $@ $(LFLAGS)
 
 # Build GNL and printf submodules
 submodules:
