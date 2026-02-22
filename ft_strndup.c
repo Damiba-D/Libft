@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddamiba <ddamiba@student.42lisboa.com>     +#+  +:+       +#+        */
+/*   By: mcardoso <mcardoso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/27 15:40:03 by ddamiba           #+#    #+#             */
-/*   Updated: 2025/10/13 08:23:52 by ddamiba          ###   ########.fr       */
+/*   Created: 2025/10/08 11:00:34 by ddamiba           #+#    #+#             */
+/*   Updated: 2026/01/16 16:21:53 by mcardoso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strndup(const char *s1, size_t len)
 {
-	int	i;
+	char		*ptr;
 
-	i = 0;
-	while (s && s[i] != '\0')
-		i++;
-	return (i);
+	if (s1 == NULL)
+		return (NULL);
+	ptr = (char *)malloc((len + 1) * sizeof(char));
+	if (ptr == NULL)
+		return (NULL);
+	ft_strlcpy(ptr, (char *)s1, len + 1);
+	return (ptr);
 }
-
-/* #include <stdio.h>
-
-int main(void)
-{
-printf("String length is: %d\n", ft_strlen("Hello"));
-}
- */
