@@ -161,6 +161,5 @@ gcc -D BUFFER_SIZE=64 your_file.c get_next_line/get_next_line.a -o your_program
 - [C Standard Library Reference — cppreference.com](https://en.cppreference.com/w/c)
 - [The C Programming Language — Kernighan & Ritchie (K&R)](https://en.wikipedia.org/wiki/The_C_Programming_Language)
 - [man pages for standard C functions](https://www.man7.org/linux/man-pages/)
-- [42 Docs — libft subject]
 
 > No AI was utilized during the development of this project.
